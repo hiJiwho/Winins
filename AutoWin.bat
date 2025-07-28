@@ -27,10 +27,11 @@ if "%PASSWORD_TMP%"=="" (
 :SelectUSB
 echo.
 echo 연결된 USB 입니다.
-for /f "skip=1 tokens=1" %%D in ('wmic logicaldisk where "drivetype=2" get deviceid') do (
-    set DRIVE=%%D
-    if not "!DRIVE!"=="" echo !DRIVE!
+:: 기존 wmic 드라이브 목록 대신 PowerShell로 USB 드라이브 목록 얻기
+for /f "delims=" %%D in ('powershell -NoProfile -Command "Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object { $_.DriveType -eq 2 } | Select-Object -ExpandProperty DeviceID"') do (
+    echo %%D
 )
+
 echo.
 set /p USBDRIVE=5. 윈도우 설치 USB의 문자를 입력해주세요! (예: E:) :
 if not "%USBDRIVE:~-1%"==":" set USBDRIVE=%USBDRIVE%:
