@@ -125,7 +125,7 @@ if "%DISKMODE%"=="auto" (
 echo         ^</OSImage^>
 echo       ^</ImageInstall^>
 echo       ^<UserData^>
-echo         ^<AcceptEula^>true^</AcceptEula^>
+echo         ^<AcceptEula^>false^</AcceptEula^>
 echo         ^<FullName^>%USERNAME%^</FullName^>
 echo         ^<Organization^>None^</Organization^>
 echo         ^<ProductKey^> ^<Key^>%PRODUCTKEY%^</Key^> ^</ProductKey^>
