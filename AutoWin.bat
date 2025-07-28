@@ -135,7 +135,7 @@ echo   ^</settings^>
 echo   ^<settings pass="oobeSystem"^>
 echo     ^<component name="Microsoft-Windows-Shell-Setup" ...^>
 echo       ^<OOBE^>
-echo         ^<HideEULAPage^>true^</HideEULAPage^>
+echo         ^<HideEULAPage^>false^</HideEULAPage^>
 echo         ^<HideWirelessSetupInOOBE^>true^</HideWirelessSetupInOOBE^>
 echo         ^<HideOnlineAccountScreens^>true^</HideOnlineAccountScreens^>
 echo         ^<NetworkLocation^>Work^</NetworkLocation^>
